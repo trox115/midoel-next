@@ -1,9 +1,12 @@
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 
-function Product({ name, title, price, images }) {
+
+function Product({ name, price, images, slug }) {
+  const router = useRouter();
 
   return (
-    <ProductContainer>
+    <ProductContainer onClick={() => router.push(`/produto/${slug}`)}>
       <ProductImage images={ images } />
       <ProductName>
         {`${name} - ${ price ? price : 'preço sob consulta' }`}
@@ -16,6 +19,7 @@ const ProductContainer = styled.div`
   width: 300px;
   height: 300px;
   border: 1px solid grey;
+  cursor: pointer;
 `
 
 const ProductImage = styled.div`
