@@ -5,7 +5,6 @@ import Logo from "./Logo";
 import Menu from "./Menu";
 
 const Header = ({ siteTitle, siteDescription,logo, items,...props }) => {
-
   return (
     <>
       <Head>
